@@ -1,0 +1,39 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    //Extra Long Factorials
+    //Java 8
+    static void extraLongFactorials(int n){
+        BigInteger b=new BigInteger("2");
+        b=new BigInteger(n+"");
+        System.out.println(factorial(b));
+    }
+    //Computing the factorial of the type BigInteger not possible with recursion.
+    //Only possible with iteration.
+    static BigInteger factorial(BigInteger n) {
+        BigInteger result = BigInteger.ONE;
+        while (!n.equals(BigInteger.ZERO)) {
+            result = result.multiply(n);
+            n = n.subtract(BigInteger.ONE);
+        }
+        return result;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        extraLongFactorials(n);
+
+        scanner.close();
+    }
+}
