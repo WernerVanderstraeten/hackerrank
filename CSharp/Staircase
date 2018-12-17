@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+class Solution {
+    static void Main(String[] args) {
+        int height = Convert.ToInt32(Console.ReadLine());
+        PrintStairCase(height);
+    }
+    
+    private static void PrintStairCase(int height)
+    {
+        for (int i = 1; i <= height; i++)
+        {
+            StringBuilder stair = new StringBuilder();
+            for (int j = 0; j < height - i; j++)
+            {
+                stair.Append(' ');
+            }
+            for (int k = 0; k < i; k++)
+            {
+                stair.Append('#');
+            }
+            Console.WriteLine(stair);
+        }
+    } 
+}
