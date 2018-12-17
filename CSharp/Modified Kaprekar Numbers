@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        
+        int bottom = Int32.Parse(Console.ReadLine());
+        int top = Int32.Parse(Console.ReadLine());
+        IList<long> numbers = new List<long>();
+        for (int i = bottom; i <= top; i++) {
+            String square = ((Int64)Math.Pow(i, 2)).ToString();
+            int index = (int)Math.Floor(square.Length / 2.0);          
+            String firstString = (index != 0) ? square.Substring(0, index) : "0";
+            String secondString = (index != square.Length) ? square.Substring(index, square.Length - index) : "0";
+            Int64 first = Int64.Parse(firstString);
+            Int64 second = Int64.Parse(secondString);
+            if (first + second == i) {
+                numbers.Add(i);
+            }
+        }
+
+        if (numbers.Count == 0) { Console.WriteLine("INVALID RANGE"); }
+        foreach (Int64 n in numbers) {
+            Console.Write(n + " ");
+        }
+    }
+}
