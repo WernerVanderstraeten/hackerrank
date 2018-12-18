@@ -1,3 +1,4 @@
+![Screenshot](title-hackerrank.jpg)
 # hackerrank
 My Hackerrank profile: https://www.hackerrank.com/wernervstr
 # Algorithms and datastructures
